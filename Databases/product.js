@@ -1,15 +1,15 @@
 const mongoose=require('mongoose');
 var productSchema=new mongoose.Schema({
-    yourName:{
+    ProductId:{
         type:String
     },
-    email:{
+    ProductName:{
         type:String
     },
-    mobile:{
+    CategoryName:{
         type:String
     },
-    city:{
+    CategoryId:{
         type:String
     }
 });
