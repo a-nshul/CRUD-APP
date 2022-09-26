@@ -2,20 +2,20 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>yourName</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>City</th>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>CategoryName</th>
+            <th>CategoryId</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         {{#each list}}
         <tr>
-            <td>{{this.yourName}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.mobile}}</td>
-            <td>{{this.city}}</td>
+            <td>{{this.ProductId}}</td>
+            <td>{{this.ProductName}}</td>
+            <td>{{this.CategoryName}}</td>
+            <td>{{this.CategoryId}}</td>
             <td>
                 <a href="/product/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
                 <a href="/product/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
