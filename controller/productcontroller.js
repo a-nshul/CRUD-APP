@@ -27,7 +27,7 @@ function insertRecord(req, res) {
         if (!err)
             res.redirect('Product/list');
         else {
-            if (err.name == 'ValidationError') {
+            if (err.ProductId == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render("Product/addOrEdit", {
                     viewTitle: "Insert Product",
@@ -44,7 +44,7 @@ function updateRecord(req, res) {
     Product.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
         if (!err) { res.redirect('product/list'); }
         else {
-            if (err.name == 'ValidationError') {
+            if (err.ProductId == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render("product/addOrEdit", {
                     viewTitle: 'Update Product',
@@ -75,11 +75,11 @@ router.get('/list', (req, res) => {
 function handleValidationError(err, body) {
     for (field in err.errors) {
         switch (err.errors[field].path) {
-            case 'yourName':
-                body['yourNameError'] = err.errors[field].message;
+            case 'ProductId':
+                body['ProductIdError'] = err.errors[field].message;
                 break;
-            case 'email':
-                body['emailError'] = err.errors[field].message;
+            case 'ProductName':
+                body['ProductNameError'] = err.errors[field].message;
                 break;
             default:
                 break;
