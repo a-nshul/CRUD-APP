@@ -19,10 +19,10 @@ router.post('/', (req, res) => {
 
 function insertRecord(req, res) {
     var Product = new Product();
-    Product.yourName = req.body.yourName;
-    Product.email = req.body.email;
-    Product.mobile = req.body.mobile;
-    Product.city = req.body.city;
+    Product.ProductId = req.body.ProductId;
+    Product.ProductName = req.body.ProductName;
+    Product.CategoryName = req.body.CategoryName;
+    Product.CategoryId = req.body.CategoryId;
     Product.save((err, doc) => {
         if (!err)
             res.redirect('Product/list');
